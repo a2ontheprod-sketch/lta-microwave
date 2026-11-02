@@ -1,0 +1,36 @@
+
+name: Build LTA MICROWAVE VST3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows-vst3:
+    runs-on: windows-2022
+
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Configure JUCE project
+        run: cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+
+      - name: Build MICROWAVE VST3
+        run: cmake --build build --config Release --target LTA_Microwave_VST3 --parallel 4
+
+      - name: Package VST3
+        shell: pwsh
+        run: |
+          $bundle = "build/LTA_Microwave_artefacts/Release/VST3/LTA MICROWAVE.vst3"
+          if (!(Test-Path -LiteralPath $bundle)) {
+            Write-Error "VST3 bundle not found"
+            exit 1
+          }
+          Compress-Archive -LiteralPath $bundle -DestinationPath "LTA_MICROWAVE_Windows_VST3.zip" -Force
+
+      - name: Upload finished VST3
+        uses: actions/upload-artifact@v4
+        with:
+          name: LTA-MICROWAVE-Windows-VST3
+          path: LTA_MICROWAVE_Windows_VST3.zip
+          if-no-files-found: error
