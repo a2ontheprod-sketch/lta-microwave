@@ -1,0 +1,28 @@
+LTA MICROWAVE — 9 PRESETS & LIVE ANIMATIONS
+
+The glass-window oscilloscope uses audio samples captured by the processor.
+The display responds to the host parameter state. A timer drives animation at 30fps.
+
+DISTORT: tanh saturation; waveform becomes sharply limited.
+OVERCOOK: clipping and quantisation; waveform becomes squared/stepped;
+          short bright overheating flashes.
+WARP: slow modulated delay / chorus; waveform ripples and leans sideways.
+GLITCH: rhythmic resampling stutter; horizontal interference strips flicker.
+DEFROST: low-pass filtering and flutter; window shifts to ice-blue with fog.
+BASS: low harmonic enhancement; concentric bass pulses fill the chamber.
+REHEAT: feedback delay; faint shifted waveform trail appears.
+STEAM: diffusion-like dual-feedback reverb; steam rises from the plate.
+COMPRESS: peak-tracking dynamic range compression; scope amplitude tightens.
+
+POWER: physical dial + ring meters show the amount of each active effect.
+MIX: LCD text (drag or scroll to change) blends dry and processed audio.
+START: microwave emits light and rotating platter; audio effects active.
+STOP: goes dark and audio is dry bypass; effects remain selected.
+
+The glass turns orange while cooking and shows a real scope signal.
+The animated platter rotates and heating coils glow with live signal level.
+Each button flashes on press and has an active red LED.
+
+Visual UI is derived from original commissioned/generated artwork with a
+repainted live LCD and a real oscilloscope overlay. No separate FX widget
+is shown outside the microwave, and every audio control is on the appliance.
